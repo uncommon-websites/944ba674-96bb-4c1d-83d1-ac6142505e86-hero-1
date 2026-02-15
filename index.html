@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marmoris | AI-Native Code Reviews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+                filter: blur(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Base animation classes */
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        /* Staggered delays */
+        .delay-0 { animation-delay: 0ms; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-700 { animation-delay: 700ms; }
+
+        /* Typography utilities */
+        .text-balance { text-wrap: balance; }
+        .text-pretty { text-wrap: pretty; }
+
+        /* Custom font smoothing for large text */
+        .antialiased-strong {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up,
+            .animate-fade-in,
+            .animate-scale-in {
+                animation: none;
+                opacity: 1;
+                transform: none;
+                filter: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white antialiased-strong overflow-hidden">
+
+    <!-- Hero Section -->
+    <main class="relative h-screen w-full overflow-hidden">
+        
+        <!-- Background Image with Scale Animation -->
+        <div class="absolute inset-0 z-0">
+            <!-- Using a placeholder that mimics the office environment colors -->
+            <img 
+                src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/944ba674-96bb-4c1d-83d1-ac6142505e86/hero-1-img-0-1771169954889.png" 
+                alt="Modern Office Interior" 
+                class="w-full h-full object-cover animate-scale-in"
+            >
+            <!-- Gradient Overlay for Text Readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/10 z-10 animate-fade-in delay-100"></div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <header class="absolute top-0 left-0 w-full z-30 px-6 py-6 md:px-10 md:py-8 flex justify-between items-start text-sm md:text-base font-medium tracking-wide">
+            
+            <!-- Left Nav -->
+            <nav class="flex gap-6 md:gap-8 animate-fade-in delay-200">
+                <a href="#" class="hover:opacity-70 transition-opacity duration-300">Product</a>
+                <a href="#" class="hover:opacity-70 transition-opacity duration-300">Security</a>
+            </nav>
+
+            <!-- Center Logo -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 top-6 md:top-8 animate-fade-in delay-300 hidden sm:block">
+                <span class="uppercase tracking-[0.2em] font-bold text-xs md:text-sm">Marmoris</span>
+            </div>
+
+            <!-- Right Nav -->
+            <nav class="flex gap-6 md:gap-8 animate-fade-in delay-200">
+                <a href="#" class="hover:opacity-70 transition-opacity duration-300">Waitlist</a>
+                <a href="#" class="hover:opacity-70 transition-opacity duration-300">Sign In</a>
+            </nav>
+        </header>
+
+        <!-- Main Hero Content -->
+        <div class="absolute bottom-0 left-0 w-full z-30 px-6 pb-12 md:px-10 md:pb-16 lg:pb-20">
+            <div class="max-w-[90vw]">
+                <h1 class="text-balance font-bold text-white leading-[0.95] tracking-tight animate-fade-in-up delay-500
+                           text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] 2xl:text-[8rem]">
+                    Ship faster with<br class="hidden sm:block" />
+                    AI-native code<br class="hidden sm:block" />
+                    reviews.
+                </h1>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
